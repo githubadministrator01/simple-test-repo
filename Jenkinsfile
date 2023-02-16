@@ -77,9 +77,6 @@ pipeline {
                     git branch
                     git checkout -b ${params.product_branch}
                     git config -l
-                    git config --global user.email "jenkins@example.com"
-                    git config --global user.name "jenkins"
-                    git config -l
                     git branch
                     git status 
                     git commit -am "${params.commit}"
