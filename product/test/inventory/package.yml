@@ -1,0 +1,7 @@
+---
+manifest:
+  application_name: test
+  release_name: "test-service"
+  release: 1.0-1
+  application_version: 1.0-1
+  build: 1
