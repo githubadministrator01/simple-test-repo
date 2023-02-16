@@ -64,7 +64,7 @@ pipeline {
                 dir("./product/${params.tla}/inventory") {
                     script {
                         new_release = sh(returnStdout: true, script: """sed -i "s|$release|${params.tla_ver}|g" package.yml""").trim()
-                        new_app_version = sh(returnStdout: true, script: """sed -i "6 s|$app_version|${params.manifest_ver}|g" package.yml""").trim()
+                        new_app_version = sh(returnStdout: true, script: """sed -i "6 s|$app_version|${params.manifest_ver}|" package.yml""").trim()
                         new_build = sh(returnStdout: true, script: """sed -i "7 s|$build|${params.build_num}|" package.yml""").trim()
                     }
                     echo "**********List and read the new package.yml**********"
