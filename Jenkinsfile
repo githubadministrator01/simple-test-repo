@@ -33,13 +33,13 @@ pipeline {
                 script {
                     currentBuild.displayName = "${params.tla} - ${params.product_branch}-manifest"
                 }
-//                 git 'https://github.com/githubadministrator01/simple-test-repo.git'
-//                 checkout([
-//                     $class: 'GitSCM',
-//                     branches: [[name: params.product_branch]],
-//                     extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'product']],
-//                     userRemoteConfigs: [[credentialsId: 'GithubCredentials', url: 'https://github.com/githubadministrator01/simple-test-repo.git']]
-//                 ])
+                git 'https://github.com/githubadministrator01/simple-test-repo.git'
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: params.product_branch]],
+                    extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'product']],
+                    userRemoteConfigs: [[credentialsId: 'gitcred', url: 'https://github.com/githubadministrator01/simple-test-repo.git']]
+                ])
             }
         }
         stage('Get Manifest data') {
