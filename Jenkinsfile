@@ -38,7 +38,7 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[name: params.product_branch]],
                     extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'product']],
-                    userRemoteConfigs: [[credentialsId: 'gitcred', url: 'https://github.com/githubadministrator01/simple-test-repo.git']]
+                    userRemoteConfigs: [[credentialsId: 'gitcred', url: 'git@github.com:githubadministrator01/simple-test-repo.git']]
                 ])
             }
         }
