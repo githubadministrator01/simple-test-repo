@@ -77,7 +77,7 @@ pipeline {
             steps {
                 sh """
                     git rev-parse --short HEAD
-                    git branch
+                    git branch --show-current
                     git checkout ${params.product_branch}
                     git rev-parse --short HEAD
                     git branch
