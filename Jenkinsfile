@@ -92,7 +92,7 @@ pipeline {
             echo "Manifest version was bumped to $tla-${params.tla_ver} with build number ${params.build_num}"
         }
         always {
-            echo "Manifest version was bumped to: 
+            echo "Manifest version was bumped to\: 
                   $tla-${params.tla_ver}
                   $tla-${params.manifest_ver} 
                   $tla-${params.build_num}
