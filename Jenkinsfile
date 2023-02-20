@@ -77,15 +77,6 @@ pipeline {
             steps {
                 echo "********** Commit and push the new TLA version to ${params.product_branch} branch for TLA ${params.tla} **********"
                 sh """
-                    git rev-parse --short HEAD
-                    git branch
-                    git checkout ${params.product_branch}
-                    git rev-parse --short HEAD
-                    git branch
-                    git config -l
-                    git config --global user.email "jenkins@example.com"
-                    git config --global user.name "jenkins"
-                    git config -l
                     git status 
                     git commit -am "${params.commit}"
                     git status
