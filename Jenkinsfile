@@ -79,6 +79,7 @@ pipeline {
                     git rev-parse --short HEAD
                     git branch
                     git checkout -b ${params.product_branch}
+                    git rev-parse --short HEAD
                     git config -l
                     git config --global user.email "pvasilev90@gmail.com"
                     git config --global user.name "githubadministrator01"
