@@ -24,7 +24,7 @@ pipeline {
     }
 
     agent {
-        label 'salt'
+        label 'linux'
     }
 
     stages {
