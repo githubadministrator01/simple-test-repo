@@ -51,6 +51,7 @@ pipeline {
                         app_version = sh(returnStdout: true, script: "awk -F: '/application_version/ {print \$2}' package.yml").trim()
                         build = sh(returnStdout: true, script: "awk -F: '/build/ {print \$2}' package.yml").trim()
                     }
+                    echo "********** Get current TLA version **********"
                     sh """
                         echo release: $release 
                         echo app_version: $app_version
@@ -67,7 +68,7 @@ pipeline {
                         new_app_version = sh(returnStdout: true, script: """sed -i "6 s|$app_version|${params.manifest_ver}|" package.yml""").trim()
                         new_build = sh(returnStdout: true, script: """sed -i "7 s|$build|${params.build_num}|" package.yml""").trim()
                     }
-                    echo "**********List and read the new package.yml**********"
+                    echo "********** List and read the new package.yml **********"
                     sh "ls -ltr ${pwd()} && cat package.yml"
                 }    
             }
