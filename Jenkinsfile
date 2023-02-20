@@ -76,6 +76,7 @@ pipeline {
         stage('Commit and Publish') {
             steps {
                 sh """
+                    git rev-parse --short HEAD
                     git branch
                     git checkout -b ${params.product_branch}
                     git config -l
