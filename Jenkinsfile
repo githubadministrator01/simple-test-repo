@@ -23,9 +23,7 @@ pipeline {
         string(name: 'product_branch', description: 'Branch of product_config repo to bump manifest version', defaultValue: 'master')
     }
 
-    agent {
-        label 'linux'
-    }
+    agent any
 
     stages {
         stage('Clone product config') {
