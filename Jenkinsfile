@@ -96,9 +96,9 @@ pipeline {
                   $tla-${params.tla_ver}
                   $tla-${params.manifest_ver} 
                   $tla-${params.build_num}
-                  release: $release 
-                  app_version: $app_version
-                  build: $build
+                  release: $new_release
+                  app_version: $new_app_version
+                  build: $new_build
                  """
             cleanWs()
         }
