@@ -51,6 +51,7 @@ pipeline {
                         app_version = sh(returnStdout: true, script: "awk -F: '/application_version/ {print \$2}' package.yml").trim()
                         build = sh(returnStdout: true, script: "awk -F: '/build/ {print \$2}' package.yml").trim()
                     }
+                    echo "Jenkins URL is $JENKINS_BASE_URL"
                     echo "********** Get current TLA version **********"
                     sh """
                         echo release: $release 
