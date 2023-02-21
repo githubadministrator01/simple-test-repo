@@ -92,14 +92,10 @@ pipeline {
             echo "Manifest version was bumped to $tla-${params.tla_ver} with build number ${params.build_num}"
         }
         always {
-            echo """Manifest version was bumped to
-                  $tla-${params.tla_ver}
-                  $tla-${params.manifest_ver} 
-                  $tla-${params.build_num}
-                  release: $new_release
-                  app_version: $new_app_version
-                  build: $new_build
-                 """
+            sh """
+                echo 'Print the updated manifest version'
+                cat package.yml
+            """
             cleanWs()
         }
     }
