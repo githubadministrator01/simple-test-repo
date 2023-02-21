@@ -31,7 +31,7 @@ pipeline {
         stage('Clone product config') {
             steps {
                 script {
-                    currentBuild.displayName = "${params.tla} - ${params.product_branch}-manifest"
+                    currentBuild.displayName = "${params.tla}-manifest/${params.product_branch}"
                 }
 //                 git 'https://github.com/githubadministrator01/simple-test-repo.git'
 //                 checkout([
