@@ -97,6 +97,7 @@ pipeline {
                 cd ./product/${params.tla}/inventory && cat package.yml
                 git diff --stat --cached origin/${params.product_branch}
                 git diff origin/${params.product_branch}
+                git diff --numstat origin/${params.product_branch}
             """
             cleanWs()
         }
