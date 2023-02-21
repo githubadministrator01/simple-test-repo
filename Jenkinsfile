@@ -95,6 +95,7 @@ pipeline {
             sh """
                 echo 'Print the updated manifest version'
                 cd ./product/${params.tla}/inventory && cat package.yml
+                git diff --stat --cached origin/${params.product_branch}
             """
             cleanWs()
         }
