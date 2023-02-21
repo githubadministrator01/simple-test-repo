@@ -94,7 +94,6 @@ pipeline {
         always {
             sh """
                 echo 'Print the commited manifest version for tla ${params.tla}'
-                cd ./product/${params.tla}/inventory && cat package.yml
                 git diff origin/${params.product_branch}
             """
             cleanWs()
