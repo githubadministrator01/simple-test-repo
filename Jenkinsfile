@@ -94,7 +94,7 @@ pipeline {
         always {
             sh """
                 echo 'Print the updated manifest version'
-                cat package.yml
+                cd ./product/${params.tla}/inventory && cat package.yml
             """
             cleanWs()
         }
