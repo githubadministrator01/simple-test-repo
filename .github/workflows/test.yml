@@ -22,7 +22,7 @@ on:
 jobs:
   print-tag:
     runs-on: ubuntu-latest
-    if:  ${{ github.event.inputs.print_tags == 'false' }} 
+    if:  ${{ inputs.print_tags == false }} 
     steps:
       - name: Print the input print tag to STDOUT
         run: echo "The print_tags are ${{ github.event.inputs.print_tags }}"
