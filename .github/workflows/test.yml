@@ -29,7 +29,6 @@ jobs:
         run: echo "The print_tags are ${{ inputs.print_tags }}"
   tags:
     runs-on: ubuntu-latest
-    needs: print-tag
     if:  ${{ inputs.print_tags }}
     steps:
       - name: Print the tags to STDOUT
