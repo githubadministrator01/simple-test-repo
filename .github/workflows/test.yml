@@ -16,7 +16,7 @@ on:
         type: boolean
       tags:
         description: 'Test scenario tags'
-        required: true
+        required: false
         type: string
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
     if:  ${{ inputs.print_tags == false }} 
     steps:
       - name: Print the input print tag to STDOUT
-        run: echo "The print_tags are ${{ github.event.inputs.print_tags }}"
+        run: echo "The print_tags are ${{ inputs.print_tags }}"
   tags:
     runs-on: ubuntu-latest
     if:  ${{ inputs.print_tags }}
