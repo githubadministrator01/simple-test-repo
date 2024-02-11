@@ -22,7 +22,7 @@ on:
 jobs:
   print-tag:
     runs-on: ubuntu-latest
-    if:  ${{ inputs.print_tags == false }} 
+    if:  ${{ inputs.print_tags == 'false' }} 
     steps:
       - name: Print the input print tag to STDOUT
         run: echo "The tags are ${{ inputs.print_tags }}" 
