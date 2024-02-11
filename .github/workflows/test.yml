@@ -18,6 +18,7 @@ on:
         description: 'Test scenario tags'
         required: false
         type: string
+        default: "test"
 
 jobs:
   print-tag:
