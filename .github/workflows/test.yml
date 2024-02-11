@@ -25,10 +25,10 @@ jobs:
     if:  ${{ github.event.inputs.print_tags == 'false' }} 
     steps:
       - name: Print the input print tag to STDOUT
-        run: echo "The tags are ${{ github.event.inputs.print_tags }}"
+        run: echo "The print_tags are ${{ github.event.inputs.print_tags }}"
   tags:
     runs-on: ubuntu-latest
-    if:  ${{ github.event.inputs.print_tags }}
+    if:  ${{ inputs.print_tags }}
     steps:
-      - name: Print the input tags to STDOUT
+      - name: Print the tags to STDOUT
         run: echo "The tags are ${{ inputs.tags }}"
